@@ -5,10 +5,9 @@
 
 # OXO Scan Orchestration Engine
 
-OXO is a securitty scanning framewora built for modularity, scalability and simplicity. sddddddddddddddddddddd
+OXO is a security scanning framework built for modularity, scalability, and simplicity.
 
-OXO Engine combines specialized tools to work cohesively to find vulnerabilities and perform actions like recon, enumeration, fingerprinting ...
-
+OXO Engine combines specialized tools to work cohesively to find vulnerabilities and perform actions like recon, enumeration, and fingerprinting.
 
 * [Documentation](https://oxo.ostorlab.co/docs)
 * [Agents Store](https://oxo.ostorlab.co/store)
@@ -19,13 +18,11 @@ OXO Engine combines specialized tools to work cohesively to find vulnerabilities
 
 # Requirements
 
-Docker is required to run scans locally. To install docker, please follow these
-[instructions](https://docs.docker.com/get-docker/).
+Docker is required to run scans locally. To install Docker, please follow these [instructions](https://docs.docker.com/get-docker/).
 
 # Installing
 
-OXO ships as a Python package on pypi. To install it, simply run the following command if you have `pip` already
-installed.
+OXO ships as a Python package on PyPI. To install it, simply run the following command if you have `pip` already installed:
 
 ```shell
 pip install -U ostorlab
@@ -33,10 +30,7 @@ pip install -U ostorlab
 
 # Getting Started
 
-OXO ships with a store that boasts dozens of agents, from network scanning agents like nmap, nuclei or
-tsunami,
-web scanner like Zap, web fingerprinting tools like Whatweb and Wappalyzer, DNS brute forcing like Subfinder and Dnsx,
-malware file scanning like Virustotal and much more.
+OXO ships with a store that boasts dozens of agents, from network scanning agents like Nmap, Nuclei, or Tsunami, to web scanners like ZAP, web fingerprinting tools like WhatWeb and Wappalyzer, DNS brute forcing like Subfinder and Dnsx, malware file scanning like VirusTotal, and much more.
 
 To run any of these tools combined, simply run the following command:
 
@@ -46,12 +40,11 @@ To run any of these tools combined, simply run the following command:
 oxo scan run --install --agent nmap --agent tsunami --agent nuclei ip 8.8.8.8
 ```
 
-or 
+Alternatively:
 
 ```shell
 oxo scan run --install --agent agent/ostorlab/nmap --agent agent/ostorlab/tsunami --agent agent/ostorlab/nuclei ip 8.8.8.8
 ```
-
 
 This command will download and install the following scanning agents:
 
@@ -61,7 +54,7 @@ This command will download and install the following scanning agents:
 
 And will scan the target IP address `8.8.8.8`.
 
-Agents are shipped as standard docker images.
+Agents are shipped as standard Docker images.
 
 To check the scan status, run:
 
@@ -76,26 +69,27 @@ oxo vulnz list --scan-id <scan-id>
 oxo vulnz describe --vuln-id <vuln-id>
 ```
 
-# Docker Image 
-To run `oxo` in a container, you may use the publicly available image and run the following command:  
+# Docker Image
+
+To run `oxo` in a container, you may use the publicly available image:
 
 ```shell
 docker run -v /var/run/docker.sock:/var/run/docker.sock ostorlab/oxo:latest scan run --install --agent nmap --agent nuclei --agent tsunami ip 8.8.8.8
 ```
 
-Notes:
-* The command starts directly with: `scan run`, this is because the `ostorlab/oxo` image has `oxo` as an `entrypoint`.
-* It is important to mount the docker socket so `oxo` can create the agent in the host machine.
+**Notes:**
+* The command starts directly with `scan run` because the `ostorlab/oxo` image has `oxo` as its `entrypoint`.
+* It is important to mount the Docker socket so `oxo` can create agents on the host machine.
 
 # Assets
 
-OXO supports scanning of multiple asset types, below is the list of currently supported:
+OXO supports scanning of multiple asset types:
 
 | Asset       | Description                                                                        |
 |-------------|------------------------------------------------------------------------------------|
-| agent       | Run scan for agent. This is used for agents scanning themselves (meta-scanning :). |
-| ip          | Run scan for IP address or an IP range .                                           |
-| link        | Run scan for web link accepting a URL, method, headers and request body.           |
+| agent       | Run scan for agent. This is used for agents scanning themselves (meta-scanning).   |
+| ip          | Run scan for IP address or an IP range.                                           |
+| link        | Run scan for web link accepting a URL, method, headers, and request body.           |
 | file        | Run scan for a generic file.                                                       |
 | android-aab | Run scan for an Android .AAB package file.                                         |
 | android-apk | Run scan for an Android .APK package file.                                         |
@@ -104,27 +98,23 @@ OXO supports scanning of multiple asset types, below is the list of currently su
 
 # The Store
 
-OXO lists all agents on a public store where you can search and also publish your own agents.
+OXO lists all agents on a public store where you can search and publish your own agents.
 
 ![Store](images/store-preview.gif)
 
-gdfhdfhadh
 # Publish your first Agent
 
-To write your first agent, you can check out a full
-tutorial [here](https://oxo.ostorlab.co/tutorials/write_an_agent).
+To write your first agent, check out the full tutorial [here](https://oxo.ostorlab.co/tutorials/write_an_agent).
 
-The steps are basically the following:
+The basic steps are:
 
-* Clone a template agent with all files already setup.
-* Change the `template_agent.py` file to add your logic.
-* Change the `Dockerfile` adding any extra building steps.
-* Change the `ostorlab.yaml` adding selectors, documentation, image, license.
-* Publish on the store.
-* Profit!
+1. Clone a template agent with all files already set up.
+2. Modify the `template_agent.py` file to add your logic.
+3. Update the `Dockerfile` with any extra build steps.
+4. Update `ostorlab.yaml` with selectors, documentation, image, and license.
+5. Publish to the store.
 
-Once you have written your agent, you can publish it on the store for others to use and discover it. The store
-will handle agent building and will automatically pick up new releases from your git repo.
+The store will handle agent building and automatically pick up new releases from your repository.
 
 ![Build](images/build.gif)
 
@@ -132,23 +122,15 @@ will handle agent building and will automatically pick up new releases from your
 
 Implementation of popular tools like:
 
-* ~~[semgrep](https://github.com/returntocorp/semgrep) for source code scanning.~~
 * [nbtscan](http://www.unixwiz.net/tools/nbtscan.html): Scans for open NETBIOS nameservers on your target’s network.
 * [onesixtyone](https://github.com/trailofbits/onesixtyone): Fast scanner to find publicly exposed SNMP services.
-* [Retire.js](http://retirejs.github.io/retire.js/): Scanner detecting the use of JavaScript libraries with known
-  vulnerabilities.
-* ~~[snallygaster](https://github.com/hannob/snallygaster): Finds file leaks and other security problems on HTTP servers.~~
-* [testssl.sh](https://testssl.sh/): Identify various TLS/SSL weaknesses, including Heartbleed, CRIME and ROBOT.
-* ~~[TruffleHog](https://github.com/trufflesecurity/truffleHog): Searches through git repositories for high entropy~~
-  strings and secrets, digging deep into commit history.
+* [Retire.js](http://retirejs.github.io/retire.js/): Scanner detecting the use of JavaScript libraries with known vulnerabilities.
+* [testssl.sh](https://testssl.sh/): Identify various TLS/SSL weaknesses, including Heartbleed, CRIME, and ROBOT.
 * [cve-bin-tool](https://github.com/intel/cve-bin-tool): Scan binaries for vulnerable components.
 * [XSStrike](https://github.com/s0md3v/XSStrike): XSS web vulnerability scanner with generative payload.
-* ~~[Subjack](https://github.com/haccer/subjack): Subdomain takeover scanning tool.~~
 * [DnsReaper](https://github.com/punk-security/dnsReaper): Subdomain takeover scanning tool.
 
 ## Credits
-
-Hello from the other sioiiiiiiiiiiiiiiiiiiiiiiide
 
 As an open-source project in a rapidly developing field, we are always open to contributions, whether it be in the form of a new feature, improved infrastructure, or better documentation.
 
