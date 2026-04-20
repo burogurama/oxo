@@ -5,10 +5,9 @@
 
 # OXO Scan Orchestration Engine
 
-OXO is a securitty scanning framewora built for modularity, scalability and simplicity. sddddddddddddddddddddd
+OXO is a security scanning framework built for modularity, scalability and simplicity.
 
-OXO Engine combines specialized tools to work cohesively to find vulnerabilities and perform actions like recon, enumeration, fingerprinting ...
-
+OXO Engine combines specialized tools to work cohesively to find vulnerabilities and perform actions like recon, enumeration, fingerprinting, and more.
 
 * [Documentation](https://oxo.ostorlab.co/docs)
 * [Agents Store](https://oxo.ostorlab.co/store)
@@ -24,8 +23,7 @@ Docker is required to run scans locally. To install docker, please follow these
 
 # Installing
 
-OXO ships as a Python package on pypi. To install it, simply run the following command if you have `pip` already
-installed.
+OXO ships as a Python package on pypi. To install it, simply run the following command if you have `pip` already installed.
 
 ```shell
 pip install -U ostorlab
@@ -33,10 +31,7 @@ pip install -U ostorlab
 
 # Getting Started
 
-OXO ships with a store that boasts dozens of agents, from network scanning agents like nmap, nuclei or
-tsunami,
-web scanner like Zap, web fingerprinting tools like Whatweb and Wappalyzer, DNS brute forcing like Subfinder and Dnsx,
-malware file scanning like Virustotal and much more.
+OXO ships with a store that boasts dozens of agents, from network scanning agents like nmap, nuclei or tsunami, web scanner like Zap, web fingerprinting tools like Whatweb and Wappalyzer, DNS brute forcing like Subfinder and Dnsx, malware file scanning like Virustotal and much more.
 
 To run any of these tools combined, simply run the following command:
 
@@ -51,7 +46,6 @@ or
 ```shell
 oxo scan run --install --agent agent/ostorlab/nmap --agent agent/ostorlab/tsunami --agent agent/ostorlab/nuclei ip 8.8.8.8
 ```
-
 
 This command will download and install the following scanning agents:
 
@@ -76,8 +70,9 @@ oxo vulnz list --scan-id <scan-id>
 oxo vulnz describe --vuln-id <vuln-id>
 ```
 
-# Docker Image 
-To run `oxo` in a container, you may use the publicly available image and run the following command:  
+# Docker Image
+
+To run `oxo` in a container, you may use the publicly available image and run the following command:
 
 ```shell
 docker run -v /var/run/docker.sock:/var/run/docker.sock ostorlab/oxo:latest scan run --install --agent nmap --agent nuclei --agent tsunami ip 8.8.8.8
@@ -94,7 +89,7 @@ OXO supports scanning of multiple asset types, below is the list of currently su
 | Asset       | Description                                                                        |
 |-------------|------------------------------------------------------------------------------------|
 | agent       | Run scan for agent. This is used for agents scanning themselves (meta-scanning :). |
-| ip          | Run scan for IP address or an IP range .                                           |
+| ip          | Run scan for IP address or an IP range.                                            |
 | link        | Run scan for web link accepting a URL, method, headers and request body.           |
 | file        | Run scan for a generic file.                                                       |
 | android-aab | Run scan for an Android .AAB package file.                                         |
@@ -108,11 +103,9 @@ OXO lists all agents on a public store where you can search and also publish you
 
 ![Store](images/store-preview.gif)
 
-gdfhdfhadh
 # Publish your first Agent
 
-To write your first agent, you can check out a full
-tutorial [here](https://oxo.ostorlab.co/tutorials/write_an_agent).
+To write your first agent, you can check out a full tutorial [here](https://oxo.ostorlab.co/tutorials/write_an_agent).
 
 The steps are basically the following:
 
@@ -123,8 +116,7 @@ The steps are basically the following:
 * Publish on the store.
 * Profit!
 
-Once you have written your agent, you can publish it on the store for others to use and discover it. The store
-will handle agent building and will automatically pick up new releases from your git repo.
+Once you have written your agent, you can publish it on the store for others to use and discover it. The store will handle agent building and will automatically pick up new releases from your git repo.
 
 ![Build](images/build.gif)
 
@@ -132,23 +124,15 @@ will handle agent building and will automatically pick up new releases from your
 
 Implementation of popular tools like:
 
-* ~~[semgrep](https://github.com/returntocorp/semgrep) for source code scanning.~~
 * [nbtscan](http://www.unixwiz.net/tools/nbtscan.html): Scans for open NETBIOS nameservers on your target’s network.
 * [onesixtyone](https://github.com/trailofbits/onesixtyone): Fast scanner to find publicly exposed SNMP services.
-* [Retire.js](http://retirejs.github.io/retire.js/): Scanner detecting the use of JavaScript libraries with known
-  vulnerabilities.
-* ~~[snallygaster](https://github.com/hannob/snallygaster): Finds file leaks and other security problems on HTTP servers.~~
+* [Retire.js](http://retirejs.github.io/retire.js/): Scanner detecting the use of JavaScript libraries with known vulnerabilities.
 * [testssl.sh](https://testssl.sh/): Identify various TLS/SSL weaknesses, including Heartbleed, CRIME and ROBOT.
-* ~~[TruffleHog](https://github.com/trufflesecurity/truffleHog): Searches through git repositories for high entropy~~
-  strings and secrets, digging deep into commit history.
 * [cve-bin-tool](https://github.com/intel/cve-bin-tool): Scan binaries for vulnerable components.
 * [XSStrike](https://github.com/s0md3v/XSStrike): XSS web vulnerability scanner with generative payload.
-* ~~[Subjack](https://github.com/haccer/subjack): Subdomain takeover scanning tool.~~
 * [DnsReaper](https://github.com/punk-security/dnsReaper): Subdomain takeover scanning tool.
 
 ## Credits
-
-Hello from the other sioiiiiiiiiiiiiiiiiiiiiiiide
 
 As an open-source project in a rapidly developing field, we are always open to contributions, whether it be in the form of a new feature, improved infrastructure, or better documentation.
 
