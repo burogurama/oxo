@@ -5,7 +5,7 @@
 
 # OXO Scan Orchestration Engine
 
-OXO is a securitty scanning framewora built for modularity, scalability and simplicity. sddddddddddddddddddddd
+OXO is a security scanning framework built for modularity, scalability and simplicity.
 
 OXO Engine combines specialized tools to work cohesively to find vulnerabilities and perform actions like recon, enumeration, fingerprinting ...
 
@@ -108,7 +108,6 @@ OXO lists all agents on a public store where you can search and also publish you
 
 ![Store](images/store-preview.gif)
 
-gdfhdfhadh
 # Publish your first Agent
 
 To write your first agent, you can check out a full
@@ -132,23 +131,15 @@ will handle agent building and will automatically pick up new releases from your
 
 Implementation of popular tools like:
 
-* ~~[semgrep](https://github.com/returntocorp/semgrep) for source code scanning.~~
 * [nbtscan](http://www.unixwiz.net/tools/nbtscan.html): Scans for open NETBIOS nameservers on your target’s network.
 * [onesixtyone](https://github.com/trailofbits/onesixtyone): Fast scanner to find publicly exposed SNMP services.
-* [Retire.js](http://retirejs.github.io/retire.js/): Scanner detecting the use of JavaScript libraries with known
-  vulnerabilities.
-* ~~[snallygaster](https://github.com/hannob/snallygaster): Finds file leaks and other security problems on HTTP servers.~~
+* [Retire.js](http://retirejs.github.io/retire.js/): Scanner detecting the use of JavaScript libraries with known vulnerabilities.
 * [testssl.sh](https://testssl.sh/): Identify various TLS/SSL weaknesses, including Heartbleed, CRIME and ROBOT.
-* ~~[TruffleHog](https://github.com/trufflesecurity/truffleHog): Searches through git repositories for high entropy~~
-  strings and secrets, digging deep into commit history.
 * [cve-bin-tool](https://github.com/intel/cve-bin-tool): Scan binaries for vulnerable components.
 * [XSStrike](https://github.com/s0md3v/XSStrike): XSS web vulnerability scanner with generative payload.
-* ~~[Subjack](https://github.com/haccer/subjack): Subdomain takeover scanning tool.~~
 * [DnsReaper](https://github.com/punk-security/dnsReaper): Subdomain takeover scanning tool.
 
 ## Credits
-
-Hello from the other sioiiiiiiiiiiiiiiiiiiiiiiide
 
 As an open-source project in a rapidly developing field, we are always open to contributions, whether it be in the form of a new feature, improved infrastructure, or better documentation.
 
