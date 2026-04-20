@@ -5,7 +5,7 @@
 
 # OXO Scan Orchestration Engine
 
-OXO is a securitty scanning framewora built for modularity, scalability and simplicity. sddddddddddddddddddddd
+OXO is a security scanning framework built for modularity, scalability and simplicity.
 
 OXO Engine combines specialized tools to work cohesively to find vulnerabilities and perform actions like recon, enumeration, fingerprinting ...
 
@@ -19,12 +19,12 @@ OXO Engine combines specialized tools to work cohesively to find vulnerabilities
 
 # Requirements
 
-Docker is required to run scans locally. To install docker, please follow these
+Docker is required to run scans locally. To install Docker, please follow these
 [instructions](https://docs.docker.com/get-docker/).
 
 # Installing
 
-OXO ships as a Python package on pypi. To install it, simply run the following command if you have `pip` already
+OXO ships as a Python package on PyPI. To install it, simply run the following command if you have `pip` already
 installed.
 
 ```shell
@@ -34,8 +34,7 @@ pip install -U ostorlab
 # Getting Started
 
 OXO ships with a store that boasts dozens of agents, from network scanning agents like nmap, nuclei or
-tsunami,
-web scanner like Zap, web fingerprinting tools like Whatweb and Wappalyzer, DNS brute forcing like Subfinder and Dnsx,
+tsunami, web scanners like Zap, web fingerprinting tools like Whatweb and Wappalyzer, DNS brute forcing like Subfinder and Dnsx,
 malware file scanning like Virustotal and much more.
 
 To run any of these tools combined, simply run the following command:
@@ -85,7 +84,7 @@ docker run -v /var/run/docker.sock:/var/run/docker.sock ostorlab/oxo:latest scan
 
 Notes:
 * The command starts directly with: `scan run`, this is because the `ostorlab/oxo` image has `oxo` as an `entrypoint`.
-* It is important to mount the docker socket so `oxo` can create the agent in the host machine.
+* It is important to mount the Docker socket so `oxo` can create the agent on the host machine.
 
 # Assets
 
@@ -94,7 +93,7 @@ OXO supports scanning of multiple asset types, below is the list of currently su
 | Asset       | Description                                                                        |
 |-------------|------------------------------------------------------------------------------------|
 | agent       | Run scan for agent. This is used for agents scanning themselves (meta-scanning :). |
-| ip          | Run scan for IP address or an IP range .                                           |
+| ip          | Run scan for IP address or an IP range.                                           |
 | link        | Run scan for web link accepting a URL, method, headers and request body.           |
 | file        | Run scan for a generic file.                                                       |
 | android-aab | Run scan for an Android .AAB package file.                                         |
@@ -108,7 +107,6 @@ OXO lists all agents on a public store where you can search and also publish you
 
 ![Store](images/store-preview.gif)
 
-gdfhdfhadh
 # Publish your first Agent
 
 To write your first agent, you can check out a full
@@ -116,10 +114,10 @@ tutorial [here](https://oxo.ostorlab.co/tutorials/write_an_agent).
 
 The steps are basically the following:
 
-* Clone a template agent with all files already setup.
+* Clone a template agent with all files already set up.
 * Change the `template_agent.py` file to add your logic.
-* Change the `Dockerfile` adding any extra building steps.
-* Change the `ostorlab.yaml` adding selectors, documentation, image, license.
+* Change the `Dockerfile` by adding any extra building steps.
+* Change the `ostorlab.yaml` by adding selectors, documentation, image, and license.
 * Publish on the store.
 * Profit!
 
@@ -147,8 +145,6 @@ Implementation of popular tools like:
 * [DnsReaper](https://github.com/punk-security/dnsReaper): Subdomain takeover scanning tool.
 
 ## Credits
-
-Hello from the other sioiiiiiiiiiiiiiiiiiiiiiiide
 
 As an open-source project in a rapidly developing field, we are always open to contributions, whether it be in the form of a new feature, improved infrastructure, or better documentation.
 
