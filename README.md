@@ -5,9 +5,9 @@
 
 # OXO Scan Orchestration Engine
 
-OXO is a securitty scanning framewora built for modularity, scalability and simplicity. sddddddddddddddddddddd
+OXO is a security scanning framework built for modularity, scalability and simplicity.
 
-OXO Engine combines specialized tools to work cohesively to find vulnerabilities and perform actions like recon, enumeration, fingerprinting ...
+OXO Engine combines specialized tools to work cohesively to find vulnerabilities and perform actions like recon, enumeration, fingerprinting...
 
 
 * [Documentation](https://oxo.ostorlab.co/docs)
@@ -19,12 +19,12 @@ OXO Engine combines specialized tools to work cohesively to find vulnerabilities
 
 # Requirements
 
-Docker is required to run scans locally. To install docker, please follow these
+Docker is required to run scans locally. To install Docker, please follow these
 [instructions](https://docs.docker.com/get-docker/).
 
 # Installing
 
-OXO ships as a Python package on pypi. To install it, simply run the following command if you have `pip` already
+OXO ships as a Python package on PyPI. To install it, simply run the following command if you have `pip` already
 installed.
 
 ```shell
@@ -35,8 +35,8 @@ pip install -U ostorlab
 
 OXO ships with a store that boasts dozens of agents, from network scanning agents like nmap, nuclei or
 tsunami,
-web scanner like Zap, web fingerprinting tools like Whatweb and Wappalyzer, DNS brute forcing like Subfinder and Dnsx,
-malware file scanning like Virustotal and much more.
+web scanners like ZAP, web fingerprinting tools like WhatWeb and Wappalyzer, DNS brute forcing like Subfinder and DNSX,
+malware file scanning like VirusTotal and much more.
 
 To run any of these tools combined, simply run the following command:
 
@@ -94,13 +94,13 @@ OXO supports scanning of multiple asset types, below is the list of currently su
 | Asset       | Description                                                                        |
 |-------------|------------------------------------------------------------------------------------|
 | agent       | Run scan for agent. This is used for agents scanning themselves (meta-scanning :). |
-| ip          | Run scan for IP address or an IP range .                                           |
+| ip          | Run scan for IP address or an IP range.                                           |
 | link        | Run scan for web link accepting a URL, method, headers and request body.           |
 | file        | Run scan for a generic file.                                                       |
 | android-aab | Run scan for an Android .AAB package file.                                         |
 | android-apk | Run scan for an Android .APK package file.                                         |
 | ios-ipa     | Run scan for iOS .IPA file.                                                        |
-| domain-name | Run scan for Domain Name asset with specifying protocol or port.                   |
+| domain-name | Run scan for Domain Name asset by specifying protocol or port.                     |
 
 # The Store
 
@@ -108,7 +108,6 @@ OXO lists all agents on a public store where you can search and also publish you
 
 ![Store](images/store-preview.gif)
 
-gdfhdfhadh
 # Publish your first Agent
 
 To write your first agent, you can check out a full
@@ -144,11 +143,9 @@ Implementation of popular tools like:
 * [cve-bin-tool](https://github.com/intel/cve-bin-tool): Scan binaries for vulnerable components.
 * [XSStrike](https://github.com/s0md3v/XSStrike): XSS web vulnerability scanner with generative payload.
 * ~~[Subjack](https://github.com/haccer/subjack): Subdomain takeover scanning tool.~~
-* [DnsReaper](https://github.com/punk-security/dnsReaper): Subdomain takeover scanning tool.
+* [DNSReaper](https://github.com/punk-security/dnsReaper): Subdomain takeover scanning tool.
 
 ## Credits
-
-Hello from the other sioiiiiiiiiiiiiiiiiiiiiiiide
 
 As an open-source project in a rapidly developing field, we are always open to contributions, whether it be in the form of a new feature, improved infrastructure, or better documentation.
 
