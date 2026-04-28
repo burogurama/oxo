@@ -33,9 +33,9 @@ pip install -U ostorlab
 
 # Getting Started
 
-OXO ships with a store that boasts dozens of agents, from network scanning agents like nmap, nuclei or
-tsunami,
-web scanners like ZAP, web fingerprinting tools like WhatWeb and Wappalyzer, DNS brute forcing like Subfinder and DNSX,
+OXO ships with a store that boasts dozens of agents, from network scanning agents like Nmap, Nuclei, or
+Tsunami,
+web scanners like ZAP, web fingerprinting tools like WhatWeb and Wappalyzer, DNS brute-forcing like Subfinder and DNSX,
 malware file scanning like VirusTotal and much more.
 
 To run any of these tools combined, simply run the following command:
@@ -61,7 +61,7 @@ This command will download and install the following scanning agents:
 
 And will scan the target IP address `8.8.8.8`.
 
-Agents are shipped as standard docker images.
+Agents are shipped as standard Docker images.
 
 To check the scan status, run:
 
@@ -69,7 +69,7 @@ To check the scan status, run:
 oxo scan list
 ```
 
-Once the scan has completed, to access the scan results, run:
+Once the scan has completed, you can access the results by running:
 
 ```shell
 oxo vulnz list --scan-id <scan-id>
@@ -77,15 +77,15 @@ oxo vulnz describe --vuln-id <vuln-id>
 ```
 
 # Docker Image 
-To run `oxo` in a container, you may use the publicly available image and run the following command:  
+To run `oxo` in a container, you can use the publicly available image and run the following command:  
 
 ```shell
 docker run -v /var/run/docker.sock:/var/run/docker.sock ostorlab/oxo:latest scan run --install --agent nmap --agent nuclei --agent tsunami ip 8.8.8.8
 ```
 
 Notes:
-* The command starts directly with: `scan run`, this is because the `ostorlab/oxo` image has `oxo` as an `entrypoint`.
-* It is important to mount the docker socket so `oxo` can create the agent in the host machine.
+* The command starts directly with `scan run` because the `ostorlab/oxo` image has `oxo` as its `entrypoint`.
+* It is important to mount the Docker socket so `oxo` can create agents on the host machine.
 
 # Assets
 
@@ -93,14 +93,14 @@ OXO supports scanning of multiple asset types, below is the list of currently su
 
 | Asset       | Description                                                                        |
 |-------------|------------------------------------------------------------------------------------|
-| agent       | Run scan for agent. This is used for agents scanning themselves (meta-scanning :). |
-| ip          | Run scan for IP address or an IP range.                                           |
-| link        | Run scan for web link accepting a URL, method, headers and request body.           |
-| file        | Run scan for a generic file.                                                       |
-| android-aab | Run scan for an Android .AAB package file.                                         |
-| android-apk | Run scan for an Android .APK package file.                                         |
-| ios-ipa     | Run scan for iOS .IPA file.                                                        |
-| domain-name | Run scan for Domain Name asset by specifying protocol or port.                     |
+| agent       | Run a scan for an agent. This is used for agents scanning themselves (meta-scanning). |
+| ip          | Run a scan for an IP address or an IP range.                                      |
+| link        | Run a scan for a web link, accepting a URL, method, headers, and request body.      |
+| file        | Run a scan for a generic file.                                                     |
+| android-aab | Run a scan for an Android .AAB package file.                                       |
+| android-apk | Run a scan for an Android .APK package file.                                       |
+| ios-ipa     | Run a scan for an iOS .IPA file.                                                   |
+| domain-name | Run a scan for a domain name asset by specifying the protocol or port.              |
 
 # The Store
 
@@ -108,26 +108,24 @@ OXO lists all agents on a public store where you can search and also publish you
 
 ![Store](images/store-preview.gif)
 
-# Publish your first Agent
+# Publish your first agent
 
-To write your first agent, you can check out a full
-tutorial [here](https://oxo.ostorlab.co/tutorials/write_an_agent).
+To write your first agent, check out the full tutorial [here](https://oxo.ostorlab.co/tutorials/write_an_agent).
 
-The steps are basically the following:
+The steps are basically as follows:
 
-* Clone a template agent with all files already setup.
-* Change the `template_agent.py` file to add your logic.
-* Change the `Dockerfile` adding any extra building steps.
-* Change the `ostorlab.yaml` adding selectors, documentation, image, license.
+* Clone a template agent with all files already set up.
+* Modify the `template_agent.py` file to add your logic.
+* Update the `Dockerfile` to add any extra build steps.
+* Edit the `ostorlab.yaml` file to include selectors, documentation, the image name, and the license.
 * Publish on the store.
 * Profit!
 
-Once you have written your agent, you can publish it on the store for others to use and discover it. The store
-will handle agent building and will automatically pick up new releases from your git repo.
+Once you have written your agent, you can publish it on the store for others to discover and use. The store handles agent building and automatically picks up new releases from your Git repository.
 
 ![Build](images/build.gif)
 
-## Ideas for Agents to build
+## Ideas for agents to build
 
 Implementation of popular tools like:
 
@@ -138,8 +136,7 @@ Implementation of popular tools like:
   vulnerabilities.
 * ~~[snallygaster](https://github.com/hannob/snallygaster): Finds file leaks and other security problems on HTTP servers.~~
 * [testssl.sh](https://testssl.sh/): Identify various TLS/SSL weaknesses, including Heartbleed, CRIME and ROBOT.
-* ~~[TruffleHog](https://github.com/trufflesecurity/truffleHog): Searches through git repositories for high entropy~~
-  strings and secrets, digging deep into commit history.
+* ~~[TruffleHog](https://github.com/trufflesecurity/truffleHog): Searches through Git repositories for high-entropy strings and secrets, digging deep into commit history.~~
 * [cve-bin-tool](https://github.com/intel/cve-bin-tool): Scan binaries for vulnerable components.
 * [XSStrike](https://github.com/s0md3v/XSStrike): XSS web vulnerability scanner with generative payload.
 * ~~[Subjack](https://github.com/haccer/subjack): Subdomain takeover scanning tool.~~
