@@ -5,9 +5,9 @@
 
 # OXO Scan Orchestration Engine
 
-OXO is a security scanning framework built for modularity, scalability and simplicity.
+OXO is a security scanning framework built for modularity, scalability, and simplicity.
 
-OXO Engine combines specialized tools to work cohesively to find vulnerabilities and perform actions like recon, enumeration, fingerprinting...
+OXO Engine combines specialized tools to work cohesively to find vulnerabilities and perform actions like recon, enumeration, and fingerprinting...
 
 
 * [Documentation](https://oxo.ostorlab.co/docs)
@@ -129,15 +129,15 @@ Once you have written your agent, you can publish it on the store for others to 
 
 Implementation of popular tools like:
 
-* ~~[semgrep](https://github.com/returntocorp/semgrep) for source code scanning.~~
-* [nbtscan](http://www.unixwiz.net/tools/nbtscan.html): Scans for open NETBIOS nameservers on your target’s network.
+* ~~[Semgrep](https://github.com/returntocorp/semgrep) for source code scanning.~~
+* [NBTscan](http://www.unixwiz.net/tools/nbtscan.html): Scans for open NetBIOS nameservers on your target’s network.
 * [onesixtyone](https://github.com/trailofbits/onesixtyone): Fast scanner to find publicly exposed SNMP services.
 * [Retire.js](http://retirejs.github.io/retire.js/): Scanner detecting the use of JavaScript libraries with known
   vulnerabilities.
-* ~~[snallygaster](https://github.com/hannob/snallygaster): Finds file leaks and other security problems on HTTP servers.~~
-* [testssl.sh](https://testssl.sh/): Identify various TLS/SSL weaknesses, including Heartbleed, CRIME and ROBOT.
+* ~~[Snallygaster](https://github.com/hannob/snallygaster): Finds file leaks and other security problems on HTTP servers.~~
+* [testssl.sh](https://testssl.sh/): Identifies various TLS/SSL weaknesses, including Heartbleed, CRIME, and ROBOT.
 * ~~[TruffleHog](https://github.com/trufflesecurity/truffleHog): Searches through Git repositories for high-entropy strings and secrets, digging deep into commit history.~~
-* [cve-bin-tool](https://github.com/intel/cve-bin-tool): Scan binaries for vulnerable components.
+* [cve-bin-tool](https://github.com/intel/cve-bin-tool): Scans binaries for vulnerable components.
 * [XSStrike](https://github.com/s0md3v/XSStrike): XSS web vulnerability scanner with generative payload.
 * ~~[Subjack](https://github.com/haccer/subjack): Subdomain takeover scanning tool.~~
 * [DNSReaper](https://github.com/punk-security/dnsReaper): Subdomain takeover scanning tool.
